@@ -1,28 +1,3 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
 # README #
 
 This README would normally document whatever steps are necessary to get your application up and running.
@@ -31,7 +6,7 @@ This README would normally document whatever steps are necessary to get your app
 
 * Quick summary
 
-The api-rightGift is a json application developed over Ruby on Rails, whose was created to response the requests from Mobile and Web application. The front-end frameworks used to do requests are VueJS, Angular and React. The propose is to build a hybrid app and to provide our app idea in Google Play Store and Apple Store. 
+The api-rightGift is a json application developed over Ruby on Rails, whose was created to response the requests from Mobile and Web application. The front-end frameworks used to do requests are VueJS, Angular and React. The propose is to build a hybrid app and to provide our app idea in Google Play Store and Apple Store.
 
 * Version
 
@@ -90,7 +65,7 @@ The methodology BDD is used in all features of the application. RSpec is framewo
 
 * Deployment instructions
 
-Done all configuration over task, just create a new branch with all changes in the repository and 
+Done all configuration over task, just create a new branch with all changes in the repository and
 apply a PR.
 
 * Other guidelines
