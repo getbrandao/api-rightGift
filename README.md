@@ -6,7 +6,7 @@ This README would normally document whatever steps are necessary to get your app
 
 * Quick summary
 
-The api-rightGift is a json application developed over Ruby on Rails, whose was created to response the requests from Mobile and Web application. This application uses the gem 'AMS' and following the specifications ans recommendations over [{json:api}](http://jsonapi.org/) API. The front-end frameworks used to do requests are VueJS, Angular and React. The propose is to build a hybrid app and to provide our app idea in Google Play Store and Apple Store.
+The api-rightGift is a json application developed over Ruby on Rails, whose was created to response the requests from Mobile and Web application. This application uses the gem 'AMS' and following the specifications ans recommendations over [{json:api}](http://jsonapi.org/). The front-end frameworks used to do requests are VueJS, Angular and React. The propose is to build a hybrid app and to provide our app idea in Google Play Store and Apple Store.
 
 * Version
 
