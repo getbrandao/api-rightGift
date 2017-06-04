@@ -4,12 +4,13 @@ namespace :dev do
     # then, whenever you need to clean the DB
     %x(rails db:drop db:create db:migrate)
 
-    puts "Creating the records from Users Model"
+    puts "Creating the records from SocialKind Model"
 
-    10.times do |i|
-      User::User.create!(
-        name: Faker::Name.name,
-        password_digest: BCrypt::Password.create(Faker::Number.number(10))
+    social_kinds = %w(Linkedin Facebook Twitter Whatsapp)
+
+    social_kinds.each do |kind|
+      SocialKind::SocialKind.create!(
+        name: kind
       )
     end
 
