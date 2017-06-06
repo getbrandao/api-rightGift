@@ -14,6 +14,8 @@ gem 'mysql2', '>= 0.3.18', '< 0.5'
 gem 'puma', '~> 3.7'
 # Use json serialization
 gem 'active_model_serializers'
+# Locale data for use in Ruby on Rails
+gem 'rails-i18n' , '~> 5.0.0'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'

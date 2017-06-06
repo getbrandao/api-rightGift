@@ -5,7 +5,7 @@ RSpec.describe SocialKindsController, '#index', type: [:controller, :social_kind
 
   context "Accessing the index action" do
     before do
-      @request.headers['Content-Type'] = 'application/vnd.api+json'
+      # @request.headers['Content-Type'] = 'application/vnd.api+json'
       get :index, format: :json
     end
 
