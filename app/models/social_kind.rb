@@ -1,0 +1,3 @@
+class SocialKind < ApplicationRecord
+
+end
