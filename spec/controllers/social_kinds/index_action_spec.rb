@@ -1,11 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe SocialKindsController, '#index', type: [:controller, :social_kind], slow: true do
-  let(:social_kinds) {FactoryGirl.create(:social_kinds)}
+  let(:social_kinds) {create(:social_kinds)}
 
   context "Accessing the index action" do
     before do
-      # @request.headers['Content-Type'] = 'application/vnd.api+json'
+      @request.headers['Content-Type'] = 'application/vnd.api+json'
+      @request.headers['Accept'] = 'application/vnd.api+json'
       get :index, format: :json
     end
 
@@ -16,7 +17,7 @@ RSpec.describe SocialKindsController, '#index', type: [:controller, :social_kind
         expect(response.content_type).to eq('application/vnd.api+json')
       end
       it "assigns a list of social_kind as @social_kinds" do
-        FactoryGirl.create_list(:social_kinds, 5)
+        create_list(:social_kinds, 5)
         parsed_response = JSON.parse(response.body)
         expect(parsed_response["data"].length).to eq(5)
       end
