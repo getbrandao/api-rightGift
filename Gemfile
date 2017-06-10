@@ -16,6 +16,8 @@ gem 'puma', '~> 3.7'
 gem 'active_model_serializers'
 # Locale data for use in Ruby on Rails
 gem 'rails-i18n' , '~> 5.0.0'
+# API Version
+gem 'versionist'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'

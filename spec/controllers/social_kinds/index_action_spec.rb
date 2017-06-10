@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe SocialKindsController, '#index', type: [:controller, :social_kind], slow: true do
+RSpec.describe V1::SocialKindsController, '#index', type: [:controller, :social_kind], slow: true do
   let(:social_kinds) {create(:social_kinds)}
 
   context "Accessing the index action" do

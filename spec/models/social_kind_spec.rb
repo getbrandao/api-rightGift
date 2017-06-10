@@ -1,7 +1,7 @@
 require "rails_helper"
 
-RSpec.describe SocialKind, type: [:model, :social_kind] do
-  subject { SocialKind.new }
+RSpec.describe V1::SocialKind, type: [:model, :social_kind] do
+  subject { V1::SocialKind.new }
   let(:params_valid) { create(:social_kinds) }
   let(:params_invalid) {{ :name => nil }}
 

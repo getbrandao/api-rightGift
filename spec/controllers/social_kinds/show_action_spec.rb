@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe SocialKindsController, '#show', type: [:controller, :social_kind], slow: true do
+RSpec.describe V1::SocialKindsController, '#show', type: [:controller, :social_kind], slow: true do
   let(:social_kinds) {FactoryGirl.create(:social_kinds)}
 
 
