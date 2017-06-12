@@ -26,11 +26,10 @@ gem 'versionist'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# gem 'devise'
-# gem 'omniauth'
-# gem 'omniauth-twitter'
-# gem 'omniauth-facebook'
-# gem 'omniauth-linkedin'
+gem 'devise_token_auth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-linkedin'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
