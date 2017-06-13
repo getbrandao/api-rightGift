@@ -26,7 +26,11 @@ gem 'versionist'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Auth Manager
 gem 'devise_token_auth'
+# Translate's Auth Manager
+gem 'devise-i18n'
+# Authentication on Social Networks
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
