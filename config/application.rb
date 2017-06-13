@@ -34,6 +34,17 @@ module ApiRightgiftV01A
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
+    # Do not swallow errors in after_commit/after_rollback callbacks.
+    # config.active_record.raise_in_transactional_callbacks = true
+    # config.middleware.use config.session_store, config.session_options
+
+    config.middleware.use Rack::MethodOverride
+    config.middleware.use ActionDispatch::Flash
+    config.middleware.use ActionDispatch::Cookies
+    # config.middleware.use ActionDispatch::Session::CookieStore
+    config.middleware.use ActionDispatch::Session::ActiveRecordStore
+    config.session_store :active_record_store
+
     config.autoload_paths += %W(#{config.root}/app #{config.root}/)
   end
 end

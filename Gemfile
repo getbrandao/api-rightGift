@@ -35,6 +35,9 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
 
+# ActionDispatch::Cookies::CookieOverflow 
+gem 'activerecord-session_store'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

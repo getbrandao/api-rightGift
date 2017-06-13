@@ -1,5 +1,6 @@
 module V1
   class SocialKindsController < ApplicationController
+    before_action :authenticate_v1_user!
     before_action :set_social_kind, only: [:show]
 
     #GET /social_kinds
