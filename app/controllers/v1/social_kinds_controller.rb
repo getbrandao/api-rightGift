@@ -5,8 +5,7 @@ module V1
 
     #GET /social_kinds
     def index
-      @social_kinds = SocialKind.all
-      render json: @social_kinds
+      render json: @social_kinds = find.all(get_model_name)
     end
 
     #GET /social_kinds/1
@@ -16,7 +15,12 @@ module V1
 
     private
     def set_social_kind
-      @social_kind = SocialKind.find(params[:id])
+      @social_kind = find.only(get_model_name, params[:id])
     end
+
+    def find
+      @find ||= V1::SocialKinds::FindService.new
+    end
+
   end
 end
