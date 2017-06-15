@@ -8,7 +8,7 @@ env:
   - DB=mysql
 sudo: required
 before_install:
-  -  chmod +x ./scripts/* #thanks https://medium.com/@psaunders
+  -  chmod +x ./script/* 
   - ./script/travis_mysql_5.7.sh
   - ./script/mysql-reset-root-password.sh
 script:
