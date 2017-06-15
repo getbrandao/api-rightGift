@@ -4,14 +4,13 @@ rvm:
 services:
   - mysql
 dist: trusty
+env:
+  - DB=mysql
 sudo: required
-addons:
-  apt:
-    packages:
-    - mysql-server-5.7
-    - mysql-server-core-5.7
-    - mysql-client-core-5.7
-    - mysql-client-5.7
+before_install:
+  -  chmod +x ./scripts/* #thanks https://medium.com/@psaunders
+  - ./script/travis_mysql_5.7.sh
+  - ./script/mysql-reset-root-password.sh
 script:
   - bundle exec rake dev:setup
   - bundle exec rspec spec/
