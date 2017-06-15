@@ -9,8 +9,8 @@ env:
 sudo: required
 before_install:
   - chmod +x ./script/*
-  - bash ./script/travis_mysql_5.7.sh
-  - bash ./script/mysql-reset-root-password.sh
+  - sh script/travis_mysql_5.7.sh
+  - sh script/mysql-reset-root-password.sh
 script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
