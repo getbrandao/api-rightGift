@@ -8,9 +8,13 @@ env:
   - DB=mysql
 sudo: required
 before_install:
-  -  chmod +x ./script/* 
+  -  chmod +x ./script/*
   - ./script/travis_mysql_5.7.sh
   - ./script/mysql-reset-root-password.sh
 script:
-  - bundle exec rake dev:setup
-  - bundle exec rspec spec/
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rake
+before_script:
+  - cp config/database.travis.yml config/database.yml
+  - mysql -e 'create database rightGift_test'

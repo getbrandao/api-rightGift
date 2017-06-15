@@ -1,0 +1,22 @@
+# config/database.travis.yml
+mysql: &mysql
+  adapter: mysql2
+  encoding: utf8
+  username: root
+  password: mkcd61al
+  database: rightGift_<%= Rails.env %>
+
+defaults: &defaults
+  pool: 5
+  timeout: 5000
+  host: localhost
+  <<: *<%= ENV['DB'] || "mysql" %>
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
