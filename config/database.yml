@@ -13,8 +13,8 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password: mkcd61al
+  username: <%= ENV['DEV_TEST_DB_USER'] %>
+  password: <%= ENV['DEV_TEST_DB_PASSWORD'] %>
   socket: /var/run/mysqld/mysqld.sock
 
 development:
@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: rightGift_production
-  username: api-rightGift_v_0_1-a
-  password: <%= ENV['API-RIGHTGIFT_V_0_1-A_DATABASE_PASSWORD'] %>
+  username: <%= ENV['PROD_DB_USER'] %>
+  password: <%= ENV['PROD_DB_PASSWORD'] %>

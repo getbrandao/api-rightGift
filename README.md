@@ -1,15 +1,20 @@
 [![Build Status](https://travis-ci.org/getbrandao/api-rightGift.svg?branch=master)](https://travis-ci.org/getbrandao/api-rightGift)
 [![Code Climate](https://codeclimate.com/github/getbrandao/api-rightGift.png)](https://codeclimate.com/github/getbrandao/api-rightGift)
+[![Test Coverage](https://codeclimate.com/github/getbrandao/api-rightGift.png)](https://codeclimate.com/github/getbrandao/api-rightGift)
+[![GitHub version](https://badge.fury.io/gh/getbrandao%2Fapi-rightGift.svg)](https://badge.fury.io/gh/getbrandao%2Fapi-rightGift)
+[![Dependency Status](https://gemnasium.com/github.com/getbrandao/api-rightGift.svg)](https://gemnasium.com/github.com/getbrandao/api-rightGift)
 
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This README would normally document whatever steps are necessary to get the application up and running.
 
 ### What is this repository for? ###
 
 * Quick summary
 
-The api-rightGift is a REST API developed over Ruby on Rails, whose was created to response the requests from Mobile and Web application. This application uses the gem 'AMS' and following the specifications ans recommendations over [{json:api}](http://jsonapi.org/). The front-end frameworks used to do requests are VueJS, Angular and React. The propose is to build a hybrid app and to provide our app idea in Google Play Store and Apple Store.
+The api-rightGift is a REST API developed over Ruby on Rails, whose was created to response the requests from Mobile and Web application. This application uses the gem 'AMS' and following the specifications ans recommendations over [{json:api}](http://jsonapi.org/). The front-end frameworks used to do requests are Angular, VueJS and React. The goal is to build a hybrid app and to provide our app idea in Google Play Store and Apple Store.
+
+The RightGift application has the propose to allow you choice some gift you would like to earn from your contacts. Because of that, you can choose which is social network (Facebook, Twitter and Google+) that you desire to share the gift with store's link and details. Futhermore, you can create a account from Paypal and send the link to your contacts, making possible to them to donate to you buy the desired gift.
 
 * Version
 
@@ -21,7 +26,7 @@ The api-rightGift is a REST API developed over Ruby on Rails, whose was created 
 
 All install and configuration are very simple. You will need install rails ~> 5.1 and MySQL Database installed!
 
-* Configuration
+* Configuration (please see (https://gorails.com/))
 
 ```
 install ruby version  -> 2.4
@@ -48,19 +53,23 @@ All gems are listed in the Gemfile file, just execute the command:
 default: &default
   adapter: mysql2
   encoding: utf8
-  pool: 5
-  username: shauto1406
-  password: sp33df1xv1
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV['DEV_TEST_DB_USER'] %>
+  password: <%= ENV['DEV_TEST_DB_PASSWORD'] %>
   socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
-  database: autofix_development
+  database: rightGift_development
 
 test:
   <<: *default
-  database: autofix_test`
+  database: rightGift_test`
 ```
+
+**Note**:
+
+Recommended install [dotenv-rails](https://github.com/bkeepers/dotenv) and configure a file(.env) with env variables you will need.
 
 * How to run tests
 
