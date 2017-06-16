@@ -2,7 +2,7 @@
 [![Code Climate](https://codeclimate.com/github/getbrandao/api-rightGift.png)](https://codeclimate.com/github/getbrandao/api-rightGift)
 [![Test Coverage](https://codeclimate.com/github/getbrandao/api-rightGift.png)](https://codeclimate.com/github/getbrandao/api-rightGift)
 [![GitHub version](https://badge.fury.io/gh/getbrandao%2Fapi-rightGift.svg)](https://badge.fury.io/gh/getbrandao%2Fapi-rightGift)
-[![Dependency Status](https://gemnasium.com/github.com/getbrandao/api-rightGift.svg)](https://gemnasium.com/github.com/getbrandao/api-rightGift)
+[![Dependency Status](https://gemnasium.com/getbrandao/api-rightGift.svg)](https://gemnasium.com/getbrandao/api-rightGift)
 
 # README #
 
