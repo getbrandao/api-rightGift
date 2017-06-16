@@ -6,6 +6,8 @@ services:
 dist: trusty
 env:
   - DB=mysql
+  - DEV_TEST_DB_USER=root
+  - DEV_TEST_DB_PASSWORD=mkcd61al
 sudo: required
 before_install:
   # - chmod +x ./script/*
