@@ -8,5 +8,5 @@ Devise.setup do |config|
   # See: http://stackoverflow.com/q/19600905/806956
   config.navigational_formats = [:json]
 
-  config.secret_key = ENV['DEVISE_SECRET_KEY'] if Rails.env.production?
+  config.secret_key = ENV['DEVISE_SECRET_KEY']
 end
