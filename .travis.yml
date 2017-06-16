@@ -1,22 +1,40 @@
 language: ruby
+
 rvm:
   - 2.4
+
 services:
   - mysql
+
 dist: trusty
+
 env:
-  - DB=mysql
-  - DEV_TEST_DB_USER=root
-  - DEV_TEST_DB_PASSWORD=mkcd61al
+  global:
+    - RAILS_ENV=test
+  matrix:
+    - DB=mysql
+    - DEV_TEST_DB_USER=root
+    - DEV_TEST_DB_PASSWORD=mkcd61al
+
 sudo: required
+
 before_install:
   # - chmod +x ./script/*
   - bash --verbose ./script/travis_mysql_5.7.sh
   - bash --verbose ./script/mysql-reset-root-password.sh
-script:
-  - RAILS_ENV=test bundle exec rake db:migrate --trace
-  - bundle exec rake db:test:prepare
-  - bundle exec rake
+
 before_script:
   - cp config/database.travis.yml config/database.yml
   - mysql -e 'create database rightGift_test'
+
+addons:
+  code_climate:
+    - repo_token: 338f52719dd2e9a66aeac86ae64395e4e5f198d64873b70b778fecd5f8d95255
+
+script:
+  - bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rake
+
+after_success:
+  - bundle exec codeclimate-test-reporter
