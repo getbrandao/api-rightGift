@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/getbrandao/api-rightGift.svg?branch=master)](https://travis-ci.org/getbrandao/api-rightGift)
+[![Code Climate](https://codeclimate.com/github/getbrandao/api-rightGift.png)](https://codeclimate.com/github/getbrandao/api-rightGift)
+
 # README #
 
 This README would normally document whatever steps are necessary to get your application up and running.

@@ -34,8 +34,9 @@ gem 'devise-i18n'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
+gem 'omniauth-google-oauth2'
 
-# ActionDispatch::Cookies::CookieOverflow 
+# ActionDispatch::Cookies::CookieOverflow
 gem 'activerecord-session_store'
 
 # Use Capistrano for deployment

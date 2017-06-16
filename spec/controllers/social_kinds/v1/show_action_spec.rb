@@ -1,11 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe V1::SocialKindsController, '#show', type: [:controller, :social_kind], slow: true do
+  let(:user) {create(:login)}
   let(:social_kinds) {FactoryGirl.create(:social_kinds)}
 
 
   context "Accessing the show action" do
     before do
+      token_sign_in(user)
       @request.headers['Content-Type'] = 'application/vnd.api+json'
       @request.headers['Accept'] = 'application/vnd.api+json'
       get :show, params: {id: social_kinds.id}, format: :json

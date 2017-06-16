@@ -1,0 +1,20 @@
+language: ruby
+rvm:
+  - 2.4
+services:
+  - mysql
+dist: trusty
+env:
+  - DB=mysql
+sudo: required
+before_install:
+  # - chmod +x ./script/*
+  - bash --verbose ./script/travis_mysql_5.7.sh
+  - bash --verbose ./script/mysql-reset-root-password.sh
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rake
+before_script:
+  - cp config/database.travis.yml config/database.yml
+  - mysql -e 'create database rightGift_test'
