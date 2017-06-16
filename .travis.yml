@@ -6,6 +6,10 @@ services:
 dist: trusty
 env:
   - DB=mysql
+  - DEV_TEST_DB_USER=root
+  - DEV_TEST_DB_PASSWORD=mkcd61al
+  - SECRET_KEY_BASE_DEV=23cf7e8dde2c43fabd5e48153f4fcb676132ac44081e51d1553269958d3f1ea7e96e69928c09d221cbc753bfc81c14367d48616f9925aed39a3d5a7b6426afe4
+  - SECRET_KEY_BASE_TEST=fe124b4f3714c3c728de589d0979b8f4a0bab136fff2b3b4d524b04a27383fc5a0c77f2c9c897298e94bef9429b24252828be63dd9edb5d3f29d968d11bc89cc
 sudo: required
 before_install:
   # - chmod +x ./script/*

@@ -33,7 +33,6 @@ gem 'devise-i18n'
 # Authentication on Social Networks
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
-gem 'omniauth-linkedin'
 gem 'omniauth-google-oauth2'
 
 # ActionDispatch::Cookies::CookieOverflow
@@ -54,6 +53,7 @@ group :development, :test do
   gem 'pry-rescue'
   gem 'rspec-rails'
   gem 'rails-controller-testing'
+  gem 'dotenv-rails'
 end
 
 group :development do
