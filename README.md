@@ -26,7 +26,7 @@ The RightGift application has the propose to allow you choice some gift you woul
 
 All install and configuration are very simple. You will need install rails ~> 5.1 and MySQL Database installed!
 
-* Configuration (please see (https://gorails.com/))
+* Configuration (please see [GO Rails](https://gorails.com/))
 
 ```
 install ruby version  -> 2.4
