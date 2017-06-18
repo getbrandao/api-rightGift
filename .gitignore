@@ -17,3 +17,4 @@
 .env
 .gemnasium.yml
 coverage
+cc-test-reporter

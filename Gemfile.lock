@@ -57,6 +57,10 @@ GEM
     byebug (9.0.6)
     case_transform (0.2)
       activesupport
+    codecov (0.1.10)
+      json
+      simplecov
+      url
     coderay (1.1.1)
     concurrent-ruby (1.0.5)
     database_cleaner (1.6.1)
@@ -253,6 +257,7 @@ GEM
     thread_safe (0.3.6)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
+    url (0.3.2)
     versionist (1.5.0)
       activesupport (>= 3)
       railties (>= 3)
@@ -271,6 +276,7 @@ DEPENDENCIES
   active_model_serializers
   activerecord-session_store
   byebug
+  codecov
   database_cleaner
   devise-i18n
   devise_token_auth

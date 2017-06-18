@@ -13,6 +13,7 @@ env:
     - RAILS_ENV=test
     - CC_TEST_REPORTER_ID=338f52719dd2e9a66aeac86ae64395e4e5f198d64873b70b778fecd5f8d95255
     - GIT_COMMITTED_AT=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git log -1 --pretty=format:%ct; else git log -1 --skip 1 --pretty=format:%ct; fi)
+    - CODECOV_TOKEN=545a4b2b-fef0-4682-abba-90b8ff6adf6d
   matrix:
     - DB=mysql
     - DEV_TEST_DB_USER=root
