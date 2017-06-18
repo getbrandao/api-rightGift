@@ -21,7 +21,6 @@ env:
 sudo: required
 
 before_install:
-  # - chmod +x ./script/*
   - bash --verbose ./script/travis_mysql_5.7.sh
   - bash --verbose ./script/mysql-reset-root-password.sh
 
@@ -36,11 +35,11 @@ script:
   - bundle exec rake db:test:prepare
   - bundle exec rake
   - bundle exec rspec
-  # - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
-addons:
-  code_climate:
-    - repo_token: 338f52719dd2e9a66aeac86ae64395e4e5f198d64873b70b778fecd5f8d95255
-
-after_success:
-  - bundle exec codeclimate-test-reporter
+# addons:
+#   code_climate:
+#     - repo_token: 338f52719dd2e9a66aeac86ae64395e4e5f198d64873b70b778fecd5f8d95255
+#
+# after_success:
+#   - bundle exec codeclimate-test-reporter
