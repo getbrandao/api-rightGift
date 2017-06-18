@@ -11,6 +11,8 @@ dist: trusty
 env:
   global:
     - RAILS_ENV=test
+    - CC_TEST_REPORTER_ID=338f52719dd2e9a66aeac86ae64395e4e5f198d64873b70b778fecd5f8d95255
+    - GIT_COMMITTED_AT=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git log -1 --pretty=format:%ct; else git log -1 --skip 1 --pretty=format:%ct; fi)
   matrix:
     - DB=mysql
     - DEV_TEST_DB_USER=root
@@ -26,15 +28,19 @@ before_install:
 before_script:
   - cp config/database.travis.yml config/database.yml
   - mysql -e 'create database rightGift_test'
-
-addons:
-  code_climate:
-    - repo_token: 338f52719dd2e9a66aeac86ae64395e4e5f198d64873b70b778fecd5f8d95255
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
 
 script:
   - bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
   - bundle exec rake
+  - bundle exec rspec
+  # - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
+
+addons:
+  code_climate:
+    - repo_token: 338f52719dd2e9a66aeac86ae64395e4e5f198d64873b70b778fecd5f8d95255
 
 after_success:
   - bundle exec codeclimate-test-reporter
