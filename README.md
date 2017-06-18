@@ -42,7 +42,7 @@ install bundle
 install MySQL 5.7
 ```
 
-You will need to change database.yml configuration for your database credentials.
+You will need to change ```database.yml``` configuration for your database credentials.
 
 * Dependencies
 
