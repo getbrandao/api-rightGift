@@ -36,4 +36,11 @@ script:
   - bundle exec rake db:test:prepare
   - bundle exec rake
   - bundle exec rspec
-  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
+  # - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
+
+addons:
+  code_climate:
+    - repo_token: 338f52719dd2e9a66aeac86ae64395e4e5f198d64873b70b778fecd5f8d95255
+
+after_success:
+  - bundle exec codeclimate-test-reporter
