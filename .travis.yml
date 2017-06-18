@@ -11,8 +11,9 @@ dist: trusty
 env:
   global:
     - RAILS_ENV=test
-    - CC_TEST_REPORTER_ID=338f52719dd2e9a66aeac86ae64395e4e5f198d64873b70b778fecd5f8d95255
-    - GIT_COMMITTED_AT=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git log -1 --pretty=format:%ct; else git log -1 --skip 1 --pretty=format:%ct; fi)
+    # - CC_TEST_REPORTER_ID=338f52719dd2e9a66aeac86ae64395e4e5f198d64873b70b778fecd5f8d95255
+    # - CODECLIMATE_REPO_TOKEN=a32506db14b041d2b8c917fa932859a4aa5c4973
+    # - GIT_COMMITTED_AT=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git log -1 --pretty=format:%ct; else git log -1 --skip 1 --pretty=format:%ct; fi)
   matrix:
     - DB=mysql
     - DEV_TEST_DB_USER=root
@@ -37,9 +38,10 @@ script:
   - bundle exec rspec
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
-# addons:
-#   code_climate:
-#     - repo_token: 338f52719dd2e9a66aeac86ae64395e4e5f198d64873b70b778fecd5f8d95255
-#
-# after_success:
-#   - bundle exec codeclimate-test-reporter
+addons:
+  code_climate:
+    - mysql: "5.7"
+    - repo_token: a32506db14b041d2b8c917fa932859a4aa5c4973
+
+after_success:
+  - bundle exec codeclimate-test-reporter

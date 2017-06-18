@@ -1,3 +1,7 @@
+# codeclimate-test-reporter gem
+# require "codeclimate-test-reporter"
+# CodeClimate::TestReporter.start
+
 # SimpleCov gem
 require 'simplecov'
 SimpleCov.start
