@@ -31,12 +31,12 @@ script:
   - bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
   - bundle exec rake
-  - bundle exec rspec
+  - bundle exec rspec && bundle exec codeclimate-test-reporter
 
 # addons:
 #   mysql: "5.7"
 #   code_climate:
 #     - repo_token: a32506db14b041d2b8c917fa932859a4aa5c4973
 
-after_success:
-  - bundle exec codeclimate-test-reporter
+# after_success:
+#   - bundle exec codeclimate-test-reporter
