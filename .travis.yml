@@ -19,7 +19,7 @@ env:
     - DEV_TEST_DB_USER=root
     - DEV_TEST_DB_PASSWORD=mkcd61al
 
-sudo: false
+sudo: require
 cache: bundler
 branches:
   only: [master, staging, production]
