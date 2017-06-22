@@ -19,7 +19,10 @@ env:
     - DEV_TEST_DB_USER=root
     - DEV_TEST_DB_PASSWORD=mkcd61al
 
-sudo: required
+sudo: false
+cache: bundler
+branches:
+  only: [master, staging, production]
 
 before_install:
   - bash --verbose ./script/travis_mysql_5.7.sh
@@ -36,4 +39,6 @@ script:
   - bundle exec rake db:test:prepare
   - bundle exec rake
   - bundle exec rspec
+
+after_success:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
