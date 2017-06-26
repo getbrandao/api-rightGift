@@ -6,10 +6,10 @@ namespace :dev do
 
     puts "Creating the records from SocialKind Model"
 
-    social_kinds = %w(Linkedin Facebook Twitter Whatsapp)
+    social_kinds = %w(linkedin Google Facebook Twitter Whatsapp)
 
     social_kinds.each do |kind|
-      SocialKind::SocialKind.create!(
+      V1::SocialKind.create!(
         name: kind
       )
     end

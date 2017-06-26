@@ -1,7 +1,10 @@
+require 'faker'
+
 FactoryGirl.define do
   factory :users, class: 'V1::User' do
-    email 'example@mail.com'
-    password 'ExamplePassword'
-    password_confirmation 'ExamplePassword'
+    name {Faker::Name.name}
+    email {Faker::Internet.email}
+    password '12345678'
+    password_confirmation '12345678'
   end
 end

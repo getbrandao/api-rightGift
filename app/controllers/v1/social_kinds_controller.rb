@@ -1,11 +1,10 @@
 module V1
   class SocialKindsController < ApplicationController
-    before_action :authenticate_v1_user!
     before_action :set_social_kind, only: [:show]
 
     #GET /social_kinds
     def index
-      render json: @social_kinds = find.all(get_model_name)
+      render json: @social_kinds = finder.all(get_model_name).order(:name)
     end
 
     #GET /social_kinds/1
@@ -15,12 +14,15 @@ module V1
 
     private
     def set_social_kind
-      @social_kind = find.only(get_model_name, params[:id])
+      unless params[:contact_id].present?
+        @social_kind = finder.only(get_model_name, params[:id])
+      else
+        @social_kind = finder.from_contact(get_model_name, params[:contact_id])
+      end
     end
 
-    def find
-      @find ||= V1::SocialKinds::FindService.new
+    def finder
+      @finder ||= V1::SocialKinds::FinderService.new
     end
-
   end
 end
