@@ -34,6 +34,9 @@ module ApiRightgiftV01A
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
+    # include_all_helpers
+    # config.action_controller.include_all_helpers = true
+
     # Do not swallow errors in after_commit/after_rollback callbacks.
     # config.active_record.raise_in_transactional_callbacks = true
     # config.middleware.use config.session_store, config.session_options

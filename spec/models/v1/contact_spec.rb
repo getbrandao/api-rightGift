@@ -1,14 +1,15 @@
 require "rails_helper"
 
-RSpec.describe V1::User, type: [:model, :user] do
-  subject { V1::User.new }
-  let(:params_valid) { create(:users) }
+RSpec.describe V1::Contact, type: [:model, :contact] do
+  subject { V1::Contact.new }
+  let(:params_valid) { create(:contacts) }
   let(:params_invalid) { {} }
 
   describe "Initialize" do
     context "when params doesn't has values" do
-      it "excepct messages error when to save user using the field email as value 'nil'" do
+      it "excepct default value when to save user using 'nil' value as params for all" do
         expect(subject.save(params_invalid)).to be_falsey
+        expect(subject.name).to eq('contact')
       end
     end
 
