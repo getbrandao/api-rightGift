@@ -14,13 +14,13 @@ module V1
 
     #POST /contacts
     def create
-      @contact, code, location = creator.create(get_model_name, contact_params)
+      @contact, code, _location = creator.create(get_model_name, contact_params)
       render json: @contact, status: code, location: @contact
     end
 
     # PATCH/PUT /contacts/1
     def update
-      @contact, code, location = updater.update(get_model_name, contact_params)
+      @contact, code, _location = updater.update(get_model_name, contact_params)
       render json: @contact, status: code, location: @contact
     end
 
