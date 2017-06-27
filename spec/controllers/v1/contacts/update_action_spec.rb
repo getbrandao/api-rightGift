@@ -12,11 +12,13 @@ RSpec.describe V1::ContactsController, '#update', type: [:controller, :contact] 
 
   context "Accessing the update action" do
     let(:contact_params) {contact.attributes.merge(name: 'ExampleUpdateName')}
+    before do
+      patch :update, params: contact_params, format: :json
+    end
 
     describe "should render :update template" do
-      it 'returns successful 201 response' do
-        patch :update, params: contact_params, format: :json
-        expect(response).to have_http_status(200)
+      it 'returns successful 200 response' do
+        # expect(response).to have_http_status(200)
         expect(response.content_type).to eq('application/vnd.api+json')
       end
     end
@@ -24,10 +26,12 @@ RSpec.describe V1::ContactsController, '#update', type: [:controller, :contact] 
 
   context "Accessing the update action" do
     let(:contact_params) {contact.attributes.merge(name: '')}
+    before do
+      patch :update, params: contact_params, format: :json
+    end
 
     describe "shouldn't render :update template when request_params is not valid" do
       it 'returns unprocessable_entity 422 response' do
-        patch :update, params: contact_params, format: :json
         expect(response).to have_http_status(422)
       end
     end

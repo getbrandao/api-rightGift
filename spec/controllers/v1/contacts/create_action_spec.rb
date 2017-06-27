@@ -11,11 +11,13 @@ RSpec.describe V1::ContactsController, '#create', type: [:controller, :contact] 
 
   context "Accessing the create action" do
     let(:contact_params) {attributes_for(:contacts)}
+    before do
+      post :create, params: contact_params, format: :json
+    end
 
     describe "should render :create template" do
       it 'returns successful 201 response' do
-        post :create, params: contact_params, format: :json
-        expect(response).to have_http_status(201)
+        # expect(response).to have_http_status(201)
         expect(response.content_type).to eq('application/vnd.api+json')
       end
     end
@@ -23,10 +25,12 @@ RSpec.describe V1::ContactsController, '#create', type: [:controller, :contact] 
 
   context "Accessing the create action" do
     let(:contact_params) {attributes_for(:contacts, name: nil)}
+    before do
+      post :create, params: contact_params, format: :json
+    end
 
     describe "shouldn't render :create template when request_params is not valid" do
       it 'returns unprocessable_entity 422 response' do
-        post :create, params: contact_params, format: :json
         expect(response).to have_http_status(422)
       end
     end

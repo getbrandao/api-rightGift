@@ -3,7 +3,7 @@ module V1
     class UpdaterService
       def update object, params
         return object.update(params), 200 if validator_contact params
-        return @contact.errors.messages, 422
+        return V1::ErrorSerializer.serialize(@contact.errors), 422
       end
       private
         def validator_contact params
