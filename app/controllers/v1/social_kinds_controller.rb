@@ -4,11 +4,13 @@ module V1
 
     #GET /social_kinds
     def index
+      cache_control
       render json: @social_kinds = finder.all(get_model_name).order(:name)
     end
 
     #GET /social_kinds/1
     def show
+      cache_control
       render json: @social_kind
     end
 
