@@ -13,5 +13,9 @@ module ApplicationHelper
   def extract_client request
     request.headers['client']
   end
-  
+
+  def cache_control
+    expires_in 45.seconds, public: true
+  end
+
 end

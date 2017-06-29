@@ -4,11 +4,13 @@ module V1
 
     #GET /contacts
     def index
+      cache_control
       render json: @contacts = finder.all(get_model_name, current_v1_user.id).order(:name)# if valid_token
     end
 
     #GET /contacts/1
     def show
+      cache_control
       render json: @contact# if valid_token
     end
 
