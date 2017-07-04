@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe V1::ContactsController, '#update', type: [:controller, :contact] do
+RSpec.describe V1::ListGiftsController, '#update', type: [:controller, :list_gift] do
   let(:login) {create(:login)}
-  let(:contact) {create(:contacts)}
+  let(:list_gift) {create(:list_gifts)}
 
   before do
     token_sign_in(login)
@@ -11,9 +11,9 @@ RSpec.describe V1::ContactsController, '#update', type: [:controller, :contact] 
   end
 
   context "Accessing the update action" do
-    let(:contact_params) {contact.attributes.merge(name: 'ExampleUpdateName')}
+    let(:list_gift_params) {list_gift.attributes.merge(name: 'ExampleUpdateName')}
     before do
-      patch :update, params: contact_params, format: :json
+      patch :update, params: list_gift_params, format: :json
     end
 
     describe "should render :update template" do
@@ -25,9 +25,9 @@ RSpec.describe V1::ContactsController, '#update', type: [:controller, :contact] 
   end
 
   context "Accessing the update action" do
-    let(:contact_params) {contact.attributes.merge(name: '')}
+    let(:list_gift_params) {list_gift.attributes.merge(name: '')}
     before do
-      patch :update, params: contact_params, format: :json
+      patch :update, params: list_gift_params, format: :json
     end
 
     describe "shouldn't render :update template when request_params is not valid" do

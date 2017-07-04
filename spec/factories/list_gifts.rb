@@ -6,5 +6,6 @@ FactoryGirl.define do
     contact_id {create(:contacts).id}
     name {Faker::StarWars.character}
     image {Faker::Lorem.characters(40)}
+    celebration {Faker::Lorem.characters(10)}
   end
 end
