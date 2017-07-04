@@ -38,7 +38,7 @@ script:
   - bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
   - bundle exec rake
-  - bundle exec rspec spec/
+  - bundle exec rspec spec/ --seed 11234
 
 after_success:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe V1::ContactsController, '#create', type: [:controller, :contact] do
+RSpec.describe V1::ListGiftsController, '#create', type: [:controller, :list_gift] do
   let(:login) {create(:login)}
 
   before do
@@ -10,9 +10,9 @@ RSpec.describe V1::ContactsController, '#create', type: [:controller, :contact] 
   end
 
   context "Accessing the create action" do
-    let(:contact_params) {attributes_for(:contacts)}
+    let(:list_gift_params) {attributes_for(:list_gifts)}
     before do
-      post :create, params: contact_params, format: :json
+      post :create, params: list_gift_params, format: :json
     end
 
     describe "should render :create template" do
@@ -24,9 +24,9 @@ RSpec.describe V1::ContactsController, '#create', type: [:controller, :contact] 
   end
 
   context "Accessing the create action" do
-    let(:contact_params) {attributes_for(:contacts, name: nil)}
+    let(:list_gift_params) {attributes_for(:list_gifts, name: nil)}
     before do
-      post :create, params: contact_params, format: :json
+      post :create, params: list_gift_params, format: :json
     end
 
     describe "shouldn't render :create template when request_params is not valid" do
