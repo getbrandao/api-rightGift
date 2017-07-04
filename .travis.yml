@@ -37,7 +37,7 @@ before_script:
 script:
   - bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
-  - bundle exec rake
+  # - bundle exec rake
   - bundle exec rspec spec/ --seed 11234
 
 after_success:
