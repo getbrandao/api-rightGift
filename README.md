@@ -5,8 +5,7 @@
 [![codecov.io](https://codecov.io/gh/getbrandao/api-rightGift/coverage.svg?branch=master)](https://codecov.io/gh/getbrandao/api-rightGift?branch=master)
 [![GitHub version](https://badge.fury.io/gh/getbrandao%2Fapi-rightGift.svg)](https://badge.fury.io/gh/getbrandao%2Fapi-rightGift)
 [![Dependency Status](https://gemnasium.com/getbrandao/api-rightGift.svg)](https://gemnasium.com/getbrandao/api-rightGift)
-[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/getbrandao/api-rightGift.svg)](http://isitmaintained.com/project/getbrandao/api-rightGift "Average time to resolve an issue")
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/getbrandao/api-rightGift.svg)](http://isitmaintained.com/project/getbrandao/api-rightGift "Percentage of issues still open")
+
 
 # README #
 
