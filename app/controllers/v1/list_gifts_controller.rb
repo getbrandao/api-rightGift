@@ -1,6 +1,6 @@
 module V1
   class ListGiftsController < ApplicationController
-    before_action :set_list_gift, only: [:show]
+    before_action :set_list_gift, only: [:show, :edit]
 
     #GET /list_gifts
     def index

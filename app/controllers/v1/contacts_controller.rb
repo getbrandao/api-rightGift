@@ -1,6 +1,6 @@
 module V1
   class ContactsController < ApplicationController
-    before_action :set_contact, only: [:show]
+    before_action :set_contact, only: [:show, :edit]
 
     #GET /contacts
     def index
