@@ -5,7 +5,7 @@
 [![codecov.io](https://codecov.io/gh/getbrandao/api-rightGift/coverage.svg?branch=master)](https://codecov.io/gh/getbrandao/api-rightGift?branch=master)
 [![GitHub version](https://badge.fury.io/gh/getbrandao%2Fapi-rightGift.svg)](https://badge.fury.io/gh/getbrandao%2Fapi-rightGift)
 [![Dependency Status](https://gemnasium.com/getbrandao/api-rightGift.svg)](https://gemnasium.com/getbrandao/api-rightGift)
-
+[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/getbrandao/api-rightGift)
 
 # README #
 
